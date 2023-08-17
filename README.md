@@ -51,7 +51,7 @@ We also use `xterm.js` (https://github.com/xtermjs/xterm.js/) and `codemirror.js
 
 This repository is a folk from the official repository of BIPES aiming to extend a blockly library for [OTTO robot](http://ottodiy.com).
 
-![BIPES for OTTO](BIPES for OTTO.png)
+![BIPES for OTTO](BIPESforOTTO.png)
 
 ## Run this folk right away
 
