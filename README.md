@@ -45,3 +45,27 @@ Some functions of `ui/index.html` were based on Blopy project (https://github.co
  OpenCV blocks were automatically generated using berak's OpenCV to Blockly generator (https://github.com/berak/blockly-cv2/tree/master/gen).
  
 We also use `xterm.js` (https://github.com/xtermjs/xterm.js/) and `codemirror.js` (https://github.com/codemirror/codemirror).
+
+
+# Guideline of the OTTO blockly library
+
+This repository is a folk from the official repository of BIPES aiming to extend a blockly library for [OTTO robot](http://ottodiy.com).
+
+![BIPES for OTTO](BIPES for OTTO.png)
+
+## Run this folk right away
+
+1. Clone the folk to local on your computer.
+2. Deploy the folder onto a local web server, such as Apache, IIS, or even the built-in server in WebStorm IDE.
+3. Visit the index.html in the folder under http://localhost:<your server port>/BIPES/index.html
+
+## Start to program for OTTO robot
+
+1. Make sure you have an OTTO robot running on Micropython firmware and [my customized OTTO Micropython library](https://github.com/robinkam/OttoDIYPython).
+2. Select OTTO Humanoid option from the device dropdown list on the right of the top bar. 
+3. Choose the connection type on the top bar. 
+   1) Bluetooth is not supported
+   2) WiFi requires WebREPL activation and WiFi connection on both the robot and the computer.
+   3) Serial requires deployment on a https server and a USB cable connecting robot and the computer
+4. Write your program using the blocks in the "OTTO Humanoid" library on the left panel.
+5. Click the RUN button near the device dropdown list after you have done programming.

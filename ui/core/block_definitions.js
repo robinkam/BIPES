@@ -170,7 +170,7 @@ Blockly.Blocks['deep_sleep8266'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("Deep sleep process in milliseconds");
+ this.setTooltip("Deep sleep process in milliseconds for each step");
  this.setHelpUrl("http://www.bipes.net.br");
   }
 };
@@ -184,7 +184,7 @@ Blockly.Blocks['deep_sleep'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("Deep sleep process in milliseconds");
+ this.setTooltip("Deep sleep process in milliseconds for each step");
  this.setHelpUrl("http://www.bipes.net.br");
   }
 };
@@ -210,7 +210,7 @@ Blockly.Blocks['delay_ms'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("Delay processing in milliseconds");
+ this.setTooltip("Delay processing in milliseconds for each step");
  this.setHelpUrl("http://www.bipes.net.br/");
   }
 };
@@ -304,7 +304,7 @@ Blockly.Blocks['utime.ticks_add'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
-    this.setTooltip("Offset ticks value by a given number, which can be either positive or negative. Must be same scale in milliseconds, microseconds or cpu ticks.");
+    this.setTooltip("Offset ticks value by a given number, which can be either positive or negative. Must be same scale in milliseconds for each step, microseconds or cpu ticks.");
     this.setHelpUrl("https://docs.micropython.org/en/latest/library/utime.html#utime.ticks_add");
   }
 };
@@ -320,7 +320,7 @@ Blockly.Blocks['utime.ticks_diff'] = {
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(230);
-    this.setTooltip("Measure ticks difference between values Must be same scale in milliseconds, microseconds or cpu ticks.");
+    this.setTooltip("Measure ticks difference between values Must be same scale in milliseconds for each step, microseconds or cpu ticks.");
     this.setHelpUrl("https://docs.micropython.org/en/latest/library/utime.html#utime.ticks_diff");
   }
 };
@@ -501,7 +501,7 @@ Blockly.Blocks['timer'] = {
         .setCheck("image");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('Set a Timer to execute periodically or one after a time given in milliseconds.');
+    this.setTooltip('Set a Timer to execute periodically or one after a time given in milliseconds for each step.');
     this.setHelpUrl("https://docs.micropython.org/en/latest/esp32/quickref.html#timers")
   }
 };
@@ -1363,7 +1363,7 @@ Blockly.Blocks['net_get_request'] = {
   init: function() {
 
     this.appendDummyInput()
-        .appendField(MSG["net_http_get"]); 
+        .appendField(MSG["net_http_get"]);
     this.appendValueInput("URL")
         .setAlign(Blockly.ALIGN_RIGHT)
         .setCheck("String")
@@ -2592,7 +2592,7 @@ Blockly.Blocks['simulate_dcmotor.sim'] = {
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour('#666666');
-    this.setTooltip("Simulate a DC Motor voltage as input at non realtime, returns speed in RPM.");
+    this.setTooltip("Simulate a DC Motor voltage as input at non realtime, returns duration in RPM.");
     this.setHelpUrl("https://github.com/JorgeGMarques/micropython-simple-pid/blob/master/examples/dc_motor/dc_motor_pid.py");
   }
 };
@@ -8781,7 +8781,7 @@ Blockly.Blocks["uselect_poll.poll"] = {
         this.setColour(0);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
- this.setTooltip(".. method:: poll.poll(timeout=-1, /) Wait for at least one of the registered objects to become ready or have an exceptional condition, with optional timeout in milliseconds (if *timeout* ");
+ this.setTooltip(".. method:: poll.poll(timeout=-1, /) Wait for at least one of the registered objects to become ready or have an exceptional condition, with optional timeout in milliseconds for each step (if *timeout* ");
  this.setHelpUrl("https://docs.micropython.org/en/latest/library/uselect.html");
   }
 };
@@ -10165,7 +10165,7 @@ Blockly.Blocks['uart_init'] = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Port:");
 
-    this.appendValueInput("speed")
+    this.appendValueInput("duration")
         .setCheck("Number")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Baud rate:");
@@ -10430,7 +10430,7 @@ Blockly.Blocks['gps_get_speed'] = {
   init: function() {
     this.setColour(135);
     this.appendDummyInput()
-        .appendField("GPS Speed");
+        .appendField("GPS Duration");
 
     this.setOutput(true);
 
@@ -10813,13 +10813,13 @@ Blockly.Blocks['motor_init'] = {
       .appendField("Right Forward");
     this.appendValueInput("right_reverse")
       .setCheck(null)
-      .appendField("Right Reverse");                  
+      .appendField("Right Reverse");
     this.appendValueInput("left_forward")
       .setCheck(null)
       .appendField("Left Forward");
     this.appendValueInput("left_reverse")
       .setCheck(null)
-      .appendField("Left Reverse");                  
+      .appendField("Left Reverse");
   }
 }
 
@@ -12278,26 +12278,26 @@ Blockly.Blocks['mpu9250_temp'] = {
 // Pololu 3pi+ 2040
 Blockly.Blocks['threepi_set_motor_left_speed'] = {
   init: function() {
-    this.appendValueInput("speed")
+    this.appendValueInput("duration")
         .setCheck("Number")
-        .appendField("set motor left speed");
+        .appendField("set motor left duration");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
-    this.setTooltip("set motor left speed");
+    this.setTooltip("set motor left duration");
     this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['threepi_set_motor_right_speed'] = {
   init: function() {
-    this.appendValueInput("speed")
+    this.appendValueInput("duration")
         .setCheck("Number")
-        .appendField("set motor right speed");
+        .appendField("set motor right duration");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
-    this.setTooltip("set motor right speed");
+    this.setTooltip("set motor right duration");
     this.setHelpUrl("");
   }
 };
@@ -12569,3 +12569,313 @@ Blockly.Blocks['data_value'] = {
   }
 };
 
+// OTTO Humanoid Block Definitions
+Blockly.Blocks['otto_humanoid_init'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("set up pins");
+    this.appendDummyInput()
+    .appendField("left leg:")
+    .appendField(new Blockly.FieldNumber(0, -1), "YL");
+    this.appendDummyInput()
+    .appendField("right leg:")
+    .appendField(new Blockly.FieldNumber(1, -1), "YR");
+    this.appendDummyInput()
+    .appendField("left foot:")
+    .appendField(new Blockly.FieldNumber(2, -1), "RL");
+    this.appendDummyInput()
+    .appendField("right leg:")
+    .appendField(new Blockly.FieldNumber(3, -1), "RR");
+    this.appendDummyInput()
+    .appendField("left arm:")
+    .appendField(new Blockly.FieldNumber(4, -1), "LA");
+    this.appendDummyInput()
+    .appendField("right arm:")
+    .appendField(new Blockly.FieldNumber(5, -1), "RA");
+    this.appendDummyInput()
+    .appendField("ultrasonic trigger:")
+    .appendField(new Blockly.FieldNumber(6, -1), "USTrigger");
+    this.appendDummyInput()
+    .appendField("ultrasonic echo:")
+    .appendField(new Blockly.FieldNumber(7, -1), "USEcho");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Initially set up the pins of all the servos and ultrasonic sensor. Must be put ahead of other OTTO blocks and used only once.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_set_trims'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("set servo trims");
+    this.appendDummyInput()
+    .appendField("left leg:")
+    .appendField(new Blockly.FieldNumber(0, 0), "YL");
+    this.appendDummyInput()
+    .appendField("right leg:")
+    .appendField(new Blockly.FieldNumber(1, 0), "YR");
+    this.appendDummyInput()
+    .appendField("left foot:")
+    .appendField(new Blockly.FieldNumber(2, 0), "RL");
+    this.appendDummyInput()
+    .appendField("right foot:")
+    .appendField(new Blockly.FieldNumber(3, 0), "RR");
+    this.appendDummyInput()
+    .appendField("left arm:")
+    .appendField(new Blockly.FieldNumber(4, 0), "LA");
+    this.appendDummyInput()
+    .appendField("right arm:")
+    .appendField(new Blockly.FieldNumber(5, 0), "RA");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Set OTTO servo trims to calibrate OTTO to the standard home pose.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_save_trims'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("save servo trims");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Save OTTO servo trims persistently, so that those trims value will be used on next boot.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_get_distance'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("get distance");
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("Get detected distance value from ultrasonic sensor. Distance Unit: cm.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_home'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("home");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Set OTTO to home position.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_hands_up'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("raise hand");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO raise hands.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_hand_wave'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("wave hand");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO wave hand. for each step；direction：1 for left，-1 for right.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_jump'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("jump");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO jump. duration：value between 600-1400，in milliseconds for each step.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_move_arm'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("move arm");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("ANGLE")
+    .setCheck("Number")
+    .appendField("angle:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO move arm to specified angle. duration：value between 600-1400，in milliseconds for each step；direction：1 for left，-1 for right; angle：value between -45~90, means offset angle from home position, positive value means raising arm.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_dash'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("dash");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO dash (walk without moving arms). duration：value between 600-1400，in milliseconds for each step；direction：1 for forward，-1 for backward.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_dodge'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("dodge");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("HEIGHT")
+    .setCheck("Number")
+    .appendField("height:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO dodge (moonwalk without moving arms). duration：value between 600-1400，in milliseconds for each step；direction：1 for left，-1 for right; height：value between 15-40, bigger number means longer distance by one step.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_walk'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("walk");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO walk. duration：value between 600-1400，in milliseconds for each step；direction：1 for forward，-1 for backward.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_turn'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("turn");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO turn. duration：value between 600-1400，in milliseconds for each step；direction：1 for left，-1 for right.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_bend'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("bend");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO bend body to one side。duration：value between 600-1400，in milliseconds for each step；direction：1 for left，-1 for right.");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['otto_humanoid_shake_leg'] = {
+  init: function() {
+    this.appendDummyInput()
+    .appendField("shake leg");
+    this.appendValueInput("STEPS")
+    .setCheck("Number")
+    .appendField("steps:");
+    this.appendValueInput("DURATION")
+    .setCheck("Number")
+    .appendField("duration:");
+    this.appendValueInput("DIRECTION")
+    .setCheck("Number")
+    .appendField("direction:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("Make OTTO bend and shake leg. duration：value between 600-1400，in milliseconds for each step；direction：1 for left，-1 for right.");
+    this.setHelpUrl("");
+  }
+};
